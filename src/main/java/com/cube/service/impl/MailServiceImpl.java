@@ -46,7 +46,6 @@ public class MailServiceImpl implements MailService {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		String[] toMails = ArrayUtil.toArray(toList, String.class);
-		// helper.setTo(toMails);
 		// 密送邮件
 		helper.setBcc(toMails);
 		helper.setCc(environment.getProperty("spring.mail.username"));
@@ -71,7 +70,6 @@ public class MailServiceImpl implements MailService {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		String[] toMails = ArrayUtil.toArray(toList, String.class);
-		// helper.setTo(toMails);
 		// 密送邮件
 		helper.setBcc(toMails);
 		helper.setCc(environment.getProperty("spring.mail.username"));

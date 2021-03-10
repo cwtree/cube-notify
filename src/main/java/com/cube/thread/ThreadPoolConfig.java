@@ -43,7 +43,7 @@ public class ThreadPoolConfig {
 		executor.setCorePoolSize(Runtime.getRuntime().availableProcessors());
 		return executor;
 	}
-	
+
 	@Bean("smsExecutor")
 	public Executor smsExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();

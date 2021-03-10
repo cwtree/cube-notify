@@ -104,7 +104,7 @@ public class NotifyController {
 		List<String> toList = dto.getPhones();
 		for (String mail : toList) {
 			if (!ReUtil.isMatch(GlobalVar.PHONE_PATTERN, mail)) {
-				return MyResp.result(Resp.PARAM_MAIL_ERROR);
+				return MyResp.result(Resp.PARAM_PHONE_ERROR);
 			}
 		}
 		try {

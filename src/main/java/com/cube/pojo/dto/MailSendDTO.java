@@ -3,7 +3,10 @@ package com.cube.pojo.dto;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,19 +32,21 @@ public class MailSendDTO {
 	 * 收件人 嵌套验证必须用@Valid
 	 */
 	@ApiModelProperty("邮件收件人列表")
-	@Size(min = 1, message = "收件人列表不能为空", groups = { MailText.class, MailTemplate.class })
+	@NotNull(message = "收件人列表信息不能为空", groups = { MailText.class, MailTemplate.class })
+	@Size(min = 1, message = "收件人列表信息有误", groups = { MailText.class, MailTemplate.class })
 	private List<String> toList;
 
 	@ApiModelProperty("邮件主题")
-	@Valid
-	@Size(min = 1, max = 50, message = "邮件主题参数有误", groups = { MailText.class, MailTemplate.class })
+	@NotNull(message = "邮件主题信息不能为空", groups = { MailText.class, MailTemplate.class })
+	@Length(min = 1, max = 50, message = "邮件主题参数有误", groups = { MailText.class, MailTemplate.class })
 	private String subject;
 
 	/**
 	 * 文本邮件内容
 	 */
 	@ApiModelProperty("文本邮件内容")
-	@Size(min = 1, max = 50, message = "邮件内容参数有误", groups = { MailText.class })
+	@NotNull(message = "邮件内容信息不能为空", groups = { MailText.class })
+	@Length(min = 1, max = 50, message = "邮件内容参数有误", groups = { MailText.class })
 	private String content;
 
 	/**
