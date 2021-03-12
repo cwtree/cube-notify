@@ -111,8 +111,8 @@ public class NotifyController {
 			mySmsService.sendSms(toList, dto.getCont());
 			return MyResp.result(Resp.SUCCESS);
 		} catch (Exception e) {
-			log.error("模板邮件发送异常", e);
-			return MyResp.result(Resp.MAIL_SEND_ERROR, "", ExceptionUtil.getMessage(e));
+			log.error("短信发送异常", e);
+			return MyResp.result(Resp.SMS_SEND_ERROR, "", ExceptionUtil.getMessage(e));
 		}
 	}
 

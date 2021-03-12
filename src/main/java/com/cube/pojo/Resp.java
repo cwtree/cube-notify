@@ -35,6 +35,8 @@ public enum Resp {
 	ERROR(5000, "服务端系统错误"),
 
 	MAIL_SEND_ERROR(5001, "邮件发送失败"),
+	
+	SMS_SEND_ERROR(5002, "短信发送失败"),
 
 	;
 
