@@ -8,8 +8,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -25,7 +23,6 @@ import lombok.extern.slf4j.Slf4j;
 @EnableAspectJAutoProxy
 @Slf4j
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
-@EnableApolloConfig
 public class CubeBootApplication {
 
 	public static void main(String[] args) {
